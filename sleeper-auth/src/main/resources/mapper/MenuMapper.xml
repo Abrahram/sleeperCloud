@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sleeperauth.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.example.sleepercommon.entity.system.Menu">
+    <!--@mbg.generated-->
+    <!--@Table t_menu-->
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="PARENT_ID" jdbcType="BIGINT" property="parentId" />
+    <result column="MENU_NAME" jdbcType="VARCHAR" property="menuName" />
+    <result column="PATH" jdbcType="VARCHAR" property="path" />
+    <result column="COMPONENT" jdbcType="VARCHAR" property="component" />
+    <result column="PERMS" jdbcType="VARCHAR" property="perms" />
+    <result column="ICON" jdbcType="VARCHAR" property="icon" />
+    <result column="TYPE" jdbcType="CHAR" property="type" />
+    <result column="ORDER_NUM" jdbcType="DOUBLE" property="orderNum" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="MODIFY_TIME" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, PARENT_ID, MENU_NAME, `PATH`, COMPONENT, PERMS, ICON, `TYPE`, ORDER_NUM, CREATE_TIME, 
+    MODIFY_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_menu
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from t_menu
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.example.sleepercommon.entity.system.Menu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_menu (PARENT_ID, MENU_NAME, `PATH`, 
+      COMPONENT, PERMS, ICON, 
+      `TYPE`, ORDER_NUM, CREATE_TIME, 
+      MODIFY_TIME)
+    values (#{parentId,jdbcType=BIGINT}, #{menuName,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{component,jdbcType=VARCHAR}, #{perms,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
+      #{type,jdbcType=CHAR}, #{orderNum,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.example.sleepercommon.entity.system.Menu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+      <if test="menuName != null">
+        MENU_NAME,
+      </if>
+      <if test="path != null">
+        `PATH`,
+      </if>
+      <if test="component != null">
+        COMPONENT,
+      </if>
+      <if test="perms != null">
+        PERMS,
+      </if>
+      <if test="icon != null">
+        ICON,
+      </if>
+      <if test="type != null">
+        `TYPE`,
+      </if>
+      <if test="orderNum != null">
+        ORDER_NUM,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="menuName != null">
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="component != null">
+        #{component,jdbcType=VARCHAR},
+      </if>
+      <if test="perms != null">
+        #{perms,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=CHAR},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.sleepercommon.entity.system.Menu">
+    <!--@mbg.generated-->
+    update t_menu
+    <set>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="menuName != null">
+        MENU_NAME = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        `PATH` = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="component != null">
+        COMPONENT = #{component,jdbcType=VARCHAR},
+      </if>
+      <if test="perms != null">
+        PERMS = #{perms,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null">
+        ICON = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `TYPE` = #{type,jdbcType=CHAR},
+      </if>
+      <if test="orderNum != null">
+        ORDER_NUM = #{orderNum,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.sleepercommon.entity.system.Menu">
+    <!--@mbg.generated-->
+    update t_menu
+    set PARENT_ID = #{parentId,jdbcType=BIGINT},
+      MENU_NAME = #{menuName,jdbcType=VARCHAR},
+      `PATH` = #{path,jdbcType=VARCHAR},
+      COMPONENT = #{component,jdbcType=VARCHAR},
+      PERMS = #{perms,jdbcType=VARCHAR},
+      ICON = #{icon,jdbcType=VARCHAR},
+      `TYPE` = #{type,jdbcType=CHAR},
+      ORDER_NUM = #{orderNum,jdbcType=DOUBLE},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findUserPermissions" resultType="menu">
+    select distinct m.perms
+    from t_role r
+    left join t_user_role ur on (r.ID = ur.role_id)
+    left join t_user u on (u.ID = ur.user_id)
+    left join t_role_menu rm on (rm.role_id = r.ID)
+    left join t_menu m on (m.ID = rm.menu_id)
+    where u.username = #{userName}
+    and m.perms is not null
+    and m.perms &lt;&gt; ''
+  </select>
+</mapper>
