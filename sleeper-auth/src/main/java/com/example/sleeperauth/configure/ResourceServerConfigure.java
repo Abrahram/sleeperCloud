@@ -1,7 +1,6 @@
 package com.example.sleeperauth.configure;
 
 import com.example.sleeperauth.properties.AuthProperties;
-import com.example.sleeperauth.properties.ValidateCodeProperties;
 import com.example.sleepercommon.handler.SleeperAccessDeniedHandler;
 import com.example.sleepercommon.handler.SleeperAuthExceptionEntryPoint;
 import org.apache.commons.lang.StringUtils;

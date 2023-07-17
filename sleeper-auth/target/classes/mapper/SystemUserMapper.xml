@@ -20,12 +20,12 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    ID, USERNAME, `PASSWORD`, DEPT_ID, EMAIL, MOBILE, `STATUS`, CREATE_TIME, MODIFY_TIME, 
+    ID, USERNAME, `PASSWORD`, DEPT_ID, EMAIL, MOBILE, `STATUS`, CREATE_TIME, MODIFY_TIME,
     LAST_LOGIN_TIME, SSEX, AVATAR, DESCRIPTION
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_user
     where ID = #{id,jdbcType=BIGINT}
@@ -37,14 +37,14 @@
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.example.sleepercommon.entity.system.SystemUser" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into t_user (USERNAME, `PASSWORD`, DEPT_ID, 
-      EMAIL, MOBILE, `STATUS`, 
-      CREATE_TIME, MODIFY_TIME, LAST_LOGIN_TIME, 
+    insert into t_user (USERNAME, `PASSWORD`, DEPT_ID,
+      EMAIL, MOBILE, `STATUS`,
+      CREATE_TIME, MODIFY_TIME, LAST_LOGIN_TIME,
       SSEX, AVATAR, DESCRIPTION
       )
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{deptId,jdbcType=BIGINT}, 
-      #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP}, 
+    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{deptId,jdbcType=BIGINT},
+      #{email,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{status,jdbcType=CHAR},
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP},
       #{sex,jdbcType=CHAR}, #{avatar,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>

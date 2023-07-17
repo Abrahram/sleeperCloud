@@ -2,15 +2,12 @@ package com.example.sleeperauth.service;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.example.sleeperauth.manager.UserManager;
-import com.example.sleeperauth.mapper.SystemUserMapper;
 import com.example.sleepercommon.entity.AuthUser;
 import com.example.sleepercommon.entity.system.SystemUser;
-import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

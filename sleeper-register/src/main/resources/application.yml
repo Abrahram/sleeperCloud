@@ -1,0 +1,24 @@
+
+server:
+  port: 8001
+  servlet:
+    context-path: /server
+
+spring:
+  application:
+    name: sleeper-Server
+
+  security:
+    user:
+      name: sleeper
+      password: 258800
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    instance-info-replication-interval-seconds: 30
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}${server.servlet.context-path}/eureka/
